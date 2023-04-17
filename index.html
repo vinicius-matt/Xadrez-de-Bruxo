@@ -67,7 +67,21 @@
         <div id="t85" onclick="seleciona(8,5);"></div>	<div id="t86" onclick="seleciona(8,6);"></div>
         <div id="t87" onclick="seleciona(8,7);"></div>	<div id="t88" onclick="seleciona(8,8);"></div>
         </div>
-        <button onclick="location.reload()">Reiniciar Jogo</button>
+        <div>
+            <h1>Placar de Vitórias</h1>
+            <h2>Jogador 1</h2>
+            <p>Vitórias: <span id="p1Score">0</span></p>
+            <button id="p1Button">Adicionar Vitória</button>
+            <h2>Jogador 2</h2>
+            <p>Vitórias: <span id="p2Score">0</span></p>
+            <button id="p2Button">Adicionar Vitória</button>
+            <br>
+            <button id="saveButton">Salvar Placar</button>
+            <button id="resetButton">Reiniciar Placar</button>
+        </div>
+
+        <button onclick="rearrangeBoard()">Reorganizar Tabuleiro</button>
+
     </body>
     <script src="script.js">
     </script>
