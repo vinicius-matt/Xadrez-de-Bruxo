@@ -485,3 +485,9 @@ function inicia_jogo(){
             }
           }
           
+  // Desabilita a capacidade de arrastar as peças após reorganizar o tabuleiro
+  const pieces = document.querySelectorAll(".piece");
+  pieces.forEach(piece => {
+    piece.draggable = false;
+  });
+}
