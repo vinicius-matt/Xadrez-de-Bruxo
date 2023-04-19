@@ -428,66 +428,66 @@ function inicia_jogo(){
           localStorage.removeItem("p2Score");
         });
 
-        function rearrangeBoard() {
-            // Objeto com as posições iniciais das peças
-            const initialPositions = {
-              t11: "&#9820;",
-              t12: "&#9822;",
-              t13: "&#9821;",
-              t14: "&#9819;",
-              t15: "&#9818;",
-              t16: "&#9821;",
-              t17: "&#9822;",
-              t18: "&#9820;",
-              t21: "&#9823;",
-              t22: "&#9823;",
-              t23: "&#9823;",
-              t24: "&#9823;",
-              t25: "&#9823;",
-              t26: "&#9823;",
-              t27: "&#9823;",
-              t28: "&#9823;",
-              t81: "&#9814;",
-              t82: "&#9816;",
-              t83: "&#9815;",
-              t84: "&#9813;",
-              t85: "&#9812;",
-              t86: "&#9815;",
-              t87: "&#9816;",
-              t88: "&#9814;",
-              t71: "&#9817;",
-              t72: "&#9817;",
-              t73: "&#9817;",
-              t74: "&#9817;",
-              t75: "&#9817;",
-              t76: "&#9817;",
-              t77: "&#9817;",
-              t78: "&#9817;"
-            };
-          
-            // Percorre todas as casas do tabuleiro
-            for (let row = 1; row <= 8; row++) {
-              for (let col = 1; col <= 8; col++) {
-                const id = "t" + row + col;
-                const currentPiece = document.getElementById(id).innerHTML;
-                
-                // Verifica se a peça atual está fora de sua posição inicial
-                if (currentPiece !== initialPositions[id]) {
-                  // Remove a peça da posição atual
-                  document.getElementById(id).innerHTML = "";
-                }
-              }
-            }
-          
-            // Define as peças iniciais em suas posições corretas
-            for (const id in initialPositions) {
-              document.getElementById(id).innerHTML = initialPositions[id];
-            }
-          }
-          
+      function rearrangeBoard() {
+  // Objeto com as posições iniciais das peças
+  const initialPositions = {
+    t11: "&#9820;",
+    t12: "&#9822;",
+    t13: "&#9821;",
+    t14: "&#9819;",
+    t15: "&#9818;",
+    t16: "&#9821;",
+    t17: "&#9822;",
+    t18: "&#9820;",
+    t21: "&#9823;",
+    t22: "&#9823;",
+    t23: "&#9823;",
+    t24: "&#9823;",
+    t25: "&#9823;",
+    t26: "&#9823;",
+    t27: "&#9823;",
+    t28: "&#9823;",
+    t81: "&#9814;",
+    t82: "&#9816;",
+    t83: "&#9815;",
+    t84: "&#9813;",
+    t85: "&#9812;",
+    t86: "&#9815;",
+    t87: "&#9816;",
+    t88: "&#9814;",
+    t71: "&#9817;",
+    t72: "&#9817;",
+    t73: "&#9817;",
+    t74: "&#9817;",
+    t75: "&#9817;",
+    t76: "&#9817;",
+    t77: "&#9817;",
+    t78: "&#9817;"
+  };
+
+  // Percorre todas as casas do tabuleiro
+  for (let row = 1; row <= 8; row++) {
+    for (let col = 1; col <= 8; col++) {
+      const id = "t" + row + col;
+      const currentPiece = document.getElementById(id).innerHTML;
+
+      // Verifica se a peça atual está fora de sua posição inicial
+      if (currentPiece !== initialPositions[id]) {
+        // Remove a peça da posição atual
+        document.getElementById(id).innerHTML = "";
+      }
+    }
+  }
+
+  // Define as peças iniciais em suas posições corretas
+  for (const id in initialPositions) {
+    document.getElementById(id).innerHTML = initialPositions[id];
+  }
+
   // Desabilita a capacidade de arrastar as peças após reorganizar o tabuleiro
   const pieces = document.querySelectorAll(".piece");
   pieces.forEach(piece => {
     piece.draggable = false;
   });
 }
+
