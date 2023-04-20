@@ -429,6 +429,12 @@ function inicia_jogo(){
         });
 
       function rearrangeBoard() {
+  // Desabilita a capacidade de arrastar as peças
+  const pieces = document.querySelectorAll(".piece");
+  pieces.forEach(piece => {
+    piece.draggable = false;
+  });
+
   // Objeto com as posições iniciais das peças
   const initialPositions = {
     t11: "&#9820;",
@@ -465,29 +471,10 @@ function inicia_jogo(){
     t78: "&#9817;"
   };
 
-  // Percorre todas as casas do tabuleiro
-  for (let row = 1; row <= 8; row++) {
-    for (let col = 1; col <= 8; col++) {
-      const id = "t" + row + col;
-      const currentPiece = document.getElementById(id).innerHTML;
-
-      // Verifica se a peça atual está fora de sua posição inicial
-      if (currentPiece !== initialPositions[id]) {
-        // Remove a peça da posição atual
-        document.getElementById(id).innerHTML = "";
-      }
-    }
-  }
-
   // Define as peças iniciais em suas posições corretas
   for (const id in initialPositions) {
     document.getElementById(id).innerHTML = initialPositions[id];
   }
-
-  // Desabilita a capacidade de arrastar as peças após reorganizar o tabuleiro
-  const pieces = document.querySelectorAll(".piece");
-  pieces.forEach(piece => {
-    piece.draggable = false;
-  });
 }
+
 
